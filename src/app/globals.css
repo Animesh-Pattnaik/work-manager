@@ -31,3 +31,174 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Ensure the layout container takes at least the full height of the viewport */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Grow the content area to fill the available space */
+.content {
+  flex: 1;
+}
+
+/* Styling for the footer */
+footer {
+  background-color: #2563eb; /* Tailwind's blue-600 */
+  height: 160px; /* Tailwind's h-30 equivalent */
+}
+
+footer .flex {
+  display: flex;
+  padding: 20px; /* Tailwind's p-5 equivalent */
+  justify-content: space-around;
+}
+
+footer .text-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer h1 {
+  font-size: 1.875rem; /* Tailwind's text-3xl equivalent */
+  margin: 0;
+}
+
+.user-profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 45px;
+}
+
+.user-profile-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.user-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.user-name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.user-email {
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.user-about {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Home.css */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 100%;
+  margin-bottom: 50px;
+  border-radius: 8px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #ff6f61;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #e85b50;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.feature-description {
+  font-size: 1rem;
+  color: #555;
+}
