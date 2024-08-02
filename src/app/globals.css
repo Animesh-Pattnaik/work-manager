@@ -44,30 +44,6 @@ body {
   flex: 1;
 }
 
-/* Styling for the footer */
-footer {
-  background-color: #2563eb; /* Tailwind's blue-600 */
-  height: 160px; /* Tailwind's h-30 equivalent */
-}
-
-footer .flex {
-  display: flex;
-  padding: 20px; /* Tailwind's p-5 equivalent */
-  justify-content: space-around;
-}
-
-footer .text-center {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-footer h1 {
-  font-size: 1.875rem; /* Tailwind's text-3xl equivalent */
-  margin: 0;
-}
-
 .user-profile-container {
   display: flex;
   justify-content: center;

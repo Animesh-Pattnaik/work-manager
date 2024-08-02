@@ -25,7 +25,7 @@ const CustomNavbar = () => {
   }
 
   return (
-    <nav className="bg-blue-600 h-16 py-2 px-6 md:px-36 flex justify-between items-center">
+    <nav className="bg-gradient-to-r from-blue-400 to-purple-600 h-16 py-2 px-6 md:px-36 flex justify-between items-center">
       <div className="brand">
         <h1 className="text-2xl font-semibold text-white">
           <a href="#!">Work Manager</a>

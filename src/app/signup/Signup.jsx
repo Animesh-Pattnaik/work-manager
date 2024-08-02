@@ -12,8 +12,7 @@ const Signup = () => {
     email: "",
     password: "",
     about: "",
-    profileURL:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz1K1evWjMTfR3IMBxQxXSGV2pTaO2rAP7EzIMB4u0YwxfFL4pJ269eff6sNvuxtjI7c4s",
+    profileURL: "",
   });
 
   const doSignup = async (event) => {
@@ -45,6 +44,12 @@ const Signup = () => {
       });
        return;
      }
+    if (data.profileURL.trim() === "" || data.profileURL == null) {
+      toast.warning("Profile URL is required !!", {
+        position: "top-center",
+      });
+      return;
+    }
     // form submit
     try {
       const result = await signUp(data);
@@ -60,8 +65,7 @@ const Signup = () => {
         email: "",
         password: "",
         about: "",
-        profileURL:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz1K1evWjMTfR3IMBxQxXSGV2pTaO2rAP7EzIMB4u0YwxfFL4pJ269eff6sNvuxtjI7c4s",
+        profileURL: "",
       });
     } catch (error) {
       console.log(error);
@@ -78,8 +82,7 @@ const Signup = () => {
       email: "",
       password: "",
       about: "",
-      profileURL:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz1K1evWjMTfR3IMBxQxXSGV2pTaO2rAP7EzIMB4u0YwxfFL4pJ269eff6sNvuxtjI7c4s",
+      profileURL: "",
     });
   };
 
@@ -188,6 +191,29 @@ const Signup = () => {
                 value={data.about}
               ></textarea>
             </div>
+            {/* profile URL */}
+            <div className="mt-3">
+              <label
+                htmlFor="user_profileURL"
+                className="block text-sm font-medium mb-2 ps-2"
+              >
+                Profile URL
+              </label>
+              <input
+                type="text"
+                className="w-full p-3 rounded-2xl bg-gray-800 focus:ring-gray-400-100 border border-gray-800"
+                placeholder="Enter here"
+                id="user_profileURL"
+                name="user_profileURL"
+                onChange={(event) => {
+                  setData({
+                    ...data,
+                    profileURL: event.target.value,
+                  });
+                }}
+                value={data.profileURL}
+              />
+            </div>
             <div className="mt-3 text-center">
               <button
                 type="submit"
@@ -203,12 +229,10 @@ const Signup = () => {
                 Reset
               </button>
             </div>
-
-            {/* {JSON.stringify(task)} */}
           </form>
         </div>
       </div>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 };

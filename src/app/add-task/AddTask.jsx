@@ -22,7 +22,6 @@ const AddTask = () => {
     // validate task data
     try {
       const result = await addTask(task);
-      // console.log(result);
       toast.success("Your task is added !!", {
         position: "top-center",
       });
@@ -34,7 +33,6 @@ const AddTask = () => {
       });
     } catch (error) {
       console.log(error);
-      console.log(error.response.data.message);
       toast.error("Task not added !!" + error.response.data.message, {
         position: "top-center",
       });
@@ -50,31 +48,27 @@ const AddTask = () => {
   };
 
   return (
-    <div className="grid grid-cols-12  justify-center">
-      <div className="col-span-4 col-start-5 p-5  shadow-sm">
+    <div className="flex justify-center p-5">
+      <div className="w-full max-w-lg p-5 shadow-sm rounded-md">
         <div className="my-8 flex justify-center">
           <Image
             src={loginSvg}
-            style={{
-              width: "50%",
-            }}
+            width={200}
+            height={200}
             alt="Login banner"
           />
         </div>
-        <h1 className="text-3xl text-center">Add your task here </h1>
+        <h1 className="text-3xl text-center">Add your task here</h1>
 
-        <form action="#!" onSubmit={handleAddTask}>
-          {/* task title  */}
+        <form onSubmit={handleAddTask}>
+          {/* Task Title */}
           <div className="mt-4">
-            <label
-              htmlFor="task_title"
-              className="block text-sm font-medium mb-2"
-            >
+            <label htmlFor="task_title" className="block text-sm font-medium mb-2">
               Title
             </label>
             <input
               type="text"
-              className="w-full p-3 rounded-3xl bg-gray-800 focus:ring-gray-400-100 border border-gray-800"
+              className="w-full p-3 rounded-lg bg-gray-800 focus:ring-gray-400 border border-gray-800"
               id="task_title"
               name="task_title"
               onChange={(event) => {
@@ -86,16 +80,13 @@ const AddTask = () => {
               value={task.title}
             />
           </div>
-          {/* task CONENT  */}
+          {/* Task Content */}
           <div className="mt-4">
-            <label
-              htmlFor="task_content"
-              className="block text-sm font-medium mb-2"
-            >
+            <label htmlFor="task_content" className="block text-sm font-medium mb-2">
               Content
             </label>
             <textarea
-              className="w-full p-3 rounded-3xl bg-gray-800 focus:ring-gray-400-100 border border-gray-800"
+              className="w-full p-3 rounded-lg bg-gray-800 focus:ring-gray-400 border border-gray-800"
               id="task_content"
               rows={5}
               name="task_content"
@@ -109,17 +100,14 @@ const AddTask = () => {
             />
           </div>
 
-          {/* task status */}
+          {/* Task Status */}
           <div className="mt-4">
-            <label
-              htmlFor="task_status"
-              className="block text-sm font-medium mb-2"
-            >
+            <label htmlFor="task_status" className="block text-sm font-medium mb-2">
               Status
             </label>
             <select
               id="task_status"
-              className="w-full p-3 rounded-3xl bg-gray-800 focus:ring-gray-400-100 border border-gray-800"
+              className="w-full p-3 rounded-lg bg-gray-800 focus:ring-gray-400 border border-gray-800"
               name="task_status"
               onChange={(event) => {
                 setTask({
@@ -132,25 +120,24 @@ const AddTask = () => {
               <option value="none" disabled>
                 ---Select Status---
               </option>
-              <option value="pending">pending</option>
-              <option value="completed">completed</option>
+              <option value="pending">Pending</option>
+              <option value="completed">Completed</option>
             </select>
           </div>
 
-          {/* button  actions */}
-          <div className="mt-4 flex justify-center">
-            <button className="bg-blue-600 py-2 px-3 rounded-lg hover:bg-blue-800">
-              Add Task{" "}
+          {/* Button Actions */}
+          <div className="mt-4 flex justify-center space-x-3">
+            <button className="bg-blue-600 py-2 px-4 rounded-lg hover:bg-blue-800 text-white">
+              Add Task
             </button>
-            <button 
-            onClick={ClearTask}
-            type="button"
-            className="bg-red-600 py-2 px-3 rounded-lg hover:bg-red-800 ms-3">
+            <button
+              onClick={ClearTask}
+              type="button"
+              className="bg-red-600 py-2 px-4 rounded-lg hover:bg-red-800 text-white"
+            >
               Clear
             </button>
           </div>
-
-          {/* {JSON.stringify(task)} */}
         </form>
       </div>
       <ToastContainer />
