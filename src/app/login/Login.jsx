@@ -42,24 +42,21 @@ const Login = () => {
   };
 
   return (
-    <div className="grid grid-cols-12">
-      <div className="col-span-4 col-start-5 ">
-        <div className="py-5"></div>
-
-        <h1 className="text-3xl text-center">Login Here </h1>
-
+    <div className="flex items-center justify-center">
+      <div className="w-full max-w-md p-8 rounded-lg shadow-lg">
+        <h1 className="text-3xl font-semibold text-center mb-6">Login Here</h1>
         <form action="#!" onSubmit={loginFormSubmitted}>
-          <div className="mt-3">
+          <div className="mb-4">
             <label
               htmlFor="user_email"
-              className="block text-sm font-medium mb-2 ps-2"
+              className="block text-sm font-medium mb-2"
             >
               Email
             </label>
             <input
               type="email"
-              className="w-full p-3 rounded-2xl bg-gray-800 focus:ring-gray-400-100 border border-gray-800"
-              placeholder="Enter here"
+              className="w-full p-3 rounded-lg text-black bg-gray-200 border border-gray-300 focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your email"
               id="user_email"
               name="user_email"
               onChange={(event) => {
@@ -71,18 +68,18 @@ const Login = () => {
               value={loginData.email}
             />
           </div>
-          {/* password */}
-          <div className="mt-3">
+          {/* Password */}
+          <div className="mb-6">
             <label
               htmlFor="user_password"
-              className="block text-sm font-medium mb-2 ps-2"
+              className="block text-sm font-medium mb-2"
             >
               Password
             </label>
             <input
               type="password"
-              className="w-full p-3 rounded-2xl bg-gray-800 focus:ring-gray-400-100 border border-gray-800"
-              placeholder="Enter here"
+              className="w-full p-3 rounded-lg text-black bg-gray-200 border border-black-300 focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your password"
               id="user_password"
               onChange={(event) => {
                 setLoginData({
@@ -94,23 +91,22 @@ const Login = () => {
             />
           </div>
 
-          <div className="mt-3 text-center">
+          <div className="flex flex-col gap-3 items-center">
             <button
               type="submit"
-              className="px-3 py-2 bg-green-600  rounded hover:bg-green-400"
+              className="w-full px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-600 text-white rounded-lg focus:border-black focus:outline-none focus:ring-2 focus:ring-black"
             >
               Login
             </button>
             <button
               type="button"
-              className="px-3 py-2 bg-orange-600 ms-3 rounded hover:bg-orange-400"
+              className="w-full px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-600 text-white rounded-lg focus:border-black focus:outline-none focus:ring-2 focus:ring-black"
             >
               Reset
             </button>
           </div>
         </form>
       </div>
-      {/* {JSON.stringify(loginData)} */}
     </div>
   );
 };
